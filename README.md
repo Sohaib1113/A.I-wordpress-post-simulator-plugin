@@ -6,6 +6,8 @@ This WordPress plugin is designed to seamlessly convert HTML or PHP snippets int
 Features
 Core Features
 HTML/PHP Input Handling:
+![image](https://github.com/user-attachments/assets/122703db-e413-4b3a-b556-8d777d8666a1)
+
 
 User Input: Enables users to input raw HTML or PHP code via a textarea or file upload within the WordPress admin area.
 Validation and Sanitization:
