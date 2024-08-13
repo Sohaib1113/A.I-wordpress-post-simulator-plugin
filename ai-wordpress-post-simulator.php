@@ -8,8 +8,6 @@ Author: Syed Sohaib
 Author URI: https://sohaibsportfolio.netlify.app
 */
 
-// Hook into WordPress initialization
-
 if (!defined('WPINC')) {
     die;
 }
@@ -24,20 +22,11 @@ register_activation_hook(__FILE__, 'html_php_to_wp_post_activate');
 // Plugin Deactivation
 function html_php_to_wp_post_deactivate()
 {
-    // Cleanup logic goes here
+    delete_option('html_php_to_wp_post_default_settings');
 }
 register_deactivation_hook(__FILE__, 'html_php_to_wp_post_deactivate');
 
-// Include functions
+// Include plugin functions
 require_once plugin_dir_path(__FILE__) . 'includes/plugin-functions.php';
 require_once plugin_dir_path(__FILE__) . 'includes/post-creation.php';
 require_once plugin_dir_path(__FILE__) . 'includes/admin-settings.php';
-
-// Hook into WordPress initialization
-add_action('init', 'html_php_to_wp_post_init');
-function html_php_to_wp_post_init()
-{
-    // Initialize plugin functionalities
-    html_php_to_wp_post_admin_settings_init();
-}
-?>
