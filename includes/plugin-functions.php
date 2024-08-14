@@ -201,3 +201,65 @@ function generate_tags_from_content($content)
     }
     return $tags;
 }
+
+// Add a Live Preview button and iframe
+function add_live_preview_feature() {
+    ?>
+    <button type="button" id="preview-btn">Live Preview</button>
+    <iframe id="live-preview-frame" style="width:100%; height:300px; display:none;"></iframe>
+    <script>
+    document.getElementById('preview-btn').addEventListener('click', function() {
+        var content = editor.getValue();
+        var iframe = document.getElementById('live-preview-frame');
+        iframe.style.display = 'block';
+        iframe.contentWindow.document.open();
+        iframe.contentWindow.document.write(content);
+        iframe.contentWindow.document.close();
+    });
+    </script>
+    <?php
+}
+add_action('admin_footer', 'add_live_preview_feature');
+
+// Register a custom post type for templates
+function register_template_post_type() {
+    $args = array(
+        'public' => true,
+        'label'  => 'Code Templates',
+        'supports' => array('title', 'editor'),
+    );
+    register_post_type('code_template', $args);
+}
+add_action('init', 'register_template_post_type');
+
+// Save current code as a template
+function save_as_template() {
+    if (isset($_POST['save_as_template'])) {
+        $title = sanitize_text_field($_POST['template_title']);
+        $content = wp_kses_post($_POST['html_php_input']);
+
+        $post_id = wp_insert_post(array(
+            'post_title'   => $title,
+            'post_content' => $content,
+            'post_status'  => 'publish',
+            'post_type'    => 'code_template',
+        ));
+
+        if ($post_id) {
+            echo 'Template saved successfully!';
+        }
+    }
+}
+add_action('admin_post_save_as_template', 'save_as_template');
+
+// Register a shortcode for each template
+function register_template_shortcodes() {
+    $templates = get_posts(array('post_type' => 'code_template', 'posts_per_page' => -1));
+
+    foreach ($templates as $template) {
+        add_shortcode($template->post_name, function() use ($template) {
+            return do_shortcode($template->post_content);
+        });
+    }
+}
+add_action('init', 'register_template_shortcodes');
