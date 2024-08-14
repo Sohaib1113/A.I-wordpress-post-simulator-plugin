@@ -1,13 +1,16 @@
 # A.I-wordpress-post-simulator-plugin
+🛠️ HTML/PHP to WordPress Post Converter 📝
+Transform your HTML/PHP snippets into WordPress posts or pages effortlessly with our plugin! Featuring a live preview 🖥️, CodeMirror syntax highlighting 🎨, and template management 🗂️, this tool empowers developers to enhance their WordPress workflow seamlessly. Dive into advanced features like custom shortcodes 🔍, version control 🕒, and Gutenberg block integration 📦, making your WordPress site more dynamic and flexible. Perfect for developers looking to automate and streamline their content creation process!
 Converts HTML or PHP snippets into WordPress posts with customizable attributes and settings.
 HTML/PHP to WordPress Post Converter
 This WordPress plugin is designed to seamlessly convert HTML or PHP snippets into WordPress posts, featuring various customizable attributes to enhance content integration and management.
+
 
 Features
 Core Features
 HTML/PHP Input Handling:
 ![image](https://github.com/user-attachments/assets/513bec5c-69ed-4a18-bf4e-095f39608f22)
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/4e82b4c6-89d8-4770-8fa8-352216a2204f)
 
 
 
@@ -50,6 +53,23 @@ Push to the Branch (git push origin feature/AmazingFeature)
 Open a Pull Request
 License
 Distributed under the MIT License. See LICENSE file for more information.
+
+Updates Made :
+**Visual Code Editor with Syntax Highlighting
+Live Preview Mode
+Template Management
+Custom Shortcodes
+Advanced Tagging and Categorization
+Version Control and Rollback
+Gutenberg Block Integration
+Conditional Logic
+Integration with Popular Plugins
+Content Import/Export
+Advanced Bulk Actions
+Scheduled Content Insertion
+API Integration**
+![Uploading image.png…]()
+
 
 Support
 For support, email amaans113@gmail.com or join our Slack channel.
