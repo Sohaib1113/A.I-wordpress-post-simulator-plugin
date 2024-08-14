@@ -54,8 +54,8 @@ Open a Pull Request
 License
 Distributed under the MIT License. See LICENSE file for more information.
 
-Updates Made :
-**Visual Code Editor with Syntax Highlighting
+Updates Made:
+Visual Code Editor with Syntax Highlighting
 Live Preview Mode
 Template Management
 Custom Shortcodes
@@ -67,8 +67,9 @@ Integration with Popular Plugins
 Content Import/Export
 Advanced Bulk Actions
 Scheduled Content Insertion
-API Integration**
-![Uploading image.png…]()
+API Integration
+![image](https://github.com/user-attachments/assets/40188a5e-4827-446c-b87f-8547e32a50cb)
+
 
 
 Support
